@@ -17,30 +17,22 @@ export default function App() {
   }, [])
 
   function calculerPoints() {
-    // Problème 3 (INP) : ce calcul bloque le thread principal plusieurs
-    // centaines de ms : la page devient totalement figée pendant ce temps.
-    let total = 0
-    for (let i = 0; i < 400_000_000; i++) {
-      total += Math.sqrt(i) % 7
+  let total = 0;
+  let i = 0;
+
+  function step() {
+    const end = Math.min(i + 2_000_000, 400_000_000);
+
+    for (; i < end; i++) {
+      total += Math.sqrt(i) % 7;
     }
-    setPoints(Math.round(total % 1000))
+
+    if (i < 400_000_000) {
+      setTimeout(step, 0);
+    } else {
+      setPoints(Math.round(total % 1000));
+    }
   }
 
-  return (
-    <div className="page">
-      {showBanner && (
-        <div className="banner">🎉 Livraison offerte ce week-end !</div>
-      )}
-
-      <h1>CycloShop</h1>
-
-      {/* Problème 1 (LCP/CLS) : pas de width/height ni d'aspect-ratio */}
-      <img src={HERO} alt="Vélo électrique pliable" />
-
-      <p>Le vélo électrique pliable le plus vendu de la boutique.</p>
-
-      <button onClick={calculerPoints}>Calculer mes points fidélité</button>
-      {points !== null && <p>Tu as {points} points fidélité.</p>}
-    </div>
-  )
+  step();
 }
