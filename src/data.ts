@@ -1,16 +1,23 @@
-export type Product = {
-  id: number
-  slug: string
-  name: string
-  price: number
-  description: string
-}
-
-export const products: Product[] = [
-  { id: 1, slug: 'velo-electrique-pliable', name: 'Vélo électrique pliable', price: 899,
-    description: "Autonomie 60km, pliable en 10 secondes, livraison offerte." },
-  { id: 2, slug: 'trottinette-tout-terrain', name: 'Trottinette tout-terrain', price: 549,
-    description: "Pneus gonflables 10 pouces, suspension avant/arrière." },
-  { id: 3, slug: 'casque-velo-connecte', name: 'Casque vélo connecté', price: 129,
-    description: "Feux de signalisation intégrés, alerte de chute automatique." },
-]
+export const products = [
+  {
+    id: 1,
+    slug: "velo-electrique-pliable",
+    name: "Vélo électrique pliable",
+    description: "Un vélo électrique pratique et facile à transporter.",
+    price: 1299,
+  },
+  {
+    id: 2,
+    slug: "velo-electrique-ville",
+    name: "Vélo électrique de ville",
+    description: "Un vélo confortable pour les déplacements quotidiens.",
+    price: 1499,
+  },
+  {
+    id: 3,
+    slug: "velo-electrique-sport",
+    name: "Vélo électrique sport",
+    description: "Un vélo performant pour les longues sorties.",
+    price: 1899,
+  },
+];
