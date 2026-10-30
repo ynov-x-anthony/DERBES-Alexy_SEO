@@ -21,3 +21,18 @@
   }}
 />
 button { padding: .6rem 1.1rem; font-size: 1rem; cursor: pointer; }
+
+/* Réservation de l'espace du bandeau */
+.banner-container {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bandeau Livraison offerte */
+.delivery-banner {
+  transition: opacity 0.3s ease;
+  width: 100%;
+  text-align: center;
+}
