@@ -1,25 +1,67 @@
-import { useSearchParams } from 'react-router-dom'
-import { products } from '../data'
+import { Link, useParams } from "react-router-dom";
+import { products } from "./products";
+import { useDocumentMeta } from "./useDocumentMeta";
 
-// Mission :
-// - utilise useDocumentMeta pour poser un <title> et une meta description
-//   propres à CE produit (pas le titre générique du site)
-// - remplace le <h3> par un <h1> (hiérarchie)
-// - ajoute un bloc "Produits similaires" qui pointe vers les autres fiches
-//   (maillage interne) : pour l'instant, rien n'y mène depuis cette page
+function Product() {
+  const { slug } = useParams();
 
-export default function Product() {
-  const [params] = useSearchParams()
-  const id = Number(params.get('id'))
-  const product = products.find((p) => p.id === id)
+  const product = products.find((p) => p.slug === slug);
 
-  if (!product) return <p className="page">Produit introuvable.</p>
+  useDocumentMeta({
+    title: product
+      ? `${product.name} | CycloShop`
+      : "Produit introuvable | CycloShop",
+    description: product
+      ? product.description
+      : "Ce produit est introuvable sur CycloShop.",
+  });
+
+  if (!product) {
+    return (
+      <main>
+        <h1>Produit introuvable</h1>
+        <Link to="/">Retour à l'accueil</Link>
+      </main>
+    );
+  }
+
+  const similarProducts = products
+    .filter((p) => p.slug !== product.slug)
+    .slice(0, 3);
 
   return (
-    <div className="page">
-      <h3>{product.name}</h3>
-      <p className="price">{product.price} €</p>
-      <p>{product.description}</p>
-    </div>
-  )
+    <main>
+      <Link to="/">Retour à l'accueil</Link>
+
+      <article>
+        <h1>{product.name}</h1>
+
+        <p>{product.description}</p>
+
+        <p>
+          <strong>Prix :</strong> {product.price} €
+        </p>
+      </article>
+
+      <section>
+        <h2>Produits similaires</h2>
+
+        <div>
+          {similarProducts.map((similarProduct) => (
+            <article key={similarProduct.slug}>
+              <h3>{similarProduct.name}</h3>
+
+              <p>{similarProduct.description}</p>
+
+              <Link to={`/produits/${similarProduct.slug}`}>
+                Découvrir ce produit
+              </Link>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
 }
+
+export default Product;
