@@ -1,12 +1,16 @@
-import { Routes, Route, Link } from 'react-router-dom'
-import Home from './pages/Home'
-import Product from './pages/Product'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Home";
+import Product from "./Product";
 
-export default function App() {
+function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/product" element={<Product />} />
-    </Routes>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/produits/:slug" element={<Product />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
+
+export default App;
