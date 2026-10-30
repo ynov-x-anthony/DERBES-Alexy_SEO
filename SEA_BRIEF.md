@@ -1,16 +1,38 @@
+
 # SEA_BRIEF.md : bonus
 
-Le vélo électrique pliable se vend bien en boutique mais peu en ligne. Le
-budget SEA (Google Ads) est de 500€/mois.
+## Requête commerciale ciblée
 
-Rédige, pour la requête commerciale "velo electrique pliable pas cher" :
+"velo electrique pliable pas cher"
 
-- **1 titre d'annonce** (30 caractères max)
-- **1 description** (90 caractères max)
-- **3 mots-clés complémentaires** à cibler, en t'appuyant sur les 4 types
-  d'intention de recherche vus en quête `seo-02` (au moins un mot-clé
-  informationnel, un commercial, un transactionnel)
+## 1. Titre de l'annonce (30 caractères maximum)
 
-> Rappel : le SEA complète le SEO, il ne le remplace pas : un bon score
-> Quality Score Google Ads dépend aussi de la pertinence de la page
-> d'atterrissage, pas seulement de l'annonce.
+Vélo pliable à petit prix
+
+## 2. Description (90 caractères maximum)
+
+Découvrez notre vélo électrique pliable : pratique, compact et à prix malin !
+
+## 3. Trois mots-clés complémentaires à cibler
+
+- Informationnel : avantages vélo électrique pliable
+- Commercial : meilleur vélo électrique pliable
+- Transactionnel : acheter vélo électrique pliable pas cher
+
+## 4. Budget publicitaire
+
+Budget mensuel : 500 €
+
+Budget journalier moyen : environ 16,67 €
+
+Le budget sera réparti entre les différents mots-clés en fonction de leurs performances et de leur potentiel de conversion.
+
+## 5. Justification
+
+La campagne Google Ads vise à attirer des internautes intéressés par l'achat d'un vélo électrique pliable.
+
+Les mots-clés informationnels permettent d'attirer des personnes qui recherchent des informations, les mots-clés commerciaux ciblent les personnes qui comparent les produits et les mots-clés transactionnels ciblent les personnes prêtes à acheter.
+
+La page de destination doit être cohérente avec l'annonce et présenter clairement le vélo, ses caractéristiques, son prix et les possibilités d'achat.
+
+Un bon Quality Score dépend notamment de la pertinence des annonces, du taux de clic attendu et de l'expérience sur la page de destination.
