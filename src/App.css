@@ -1,4 +1,14 @@
-.banner { background: #fde9c8; padding: .8rem 1rem; border-radius: 6px; margin-bottom: 1rem; }
+<div className="banner-container">
+  <div
+    className="delivery-banner"
+    style={{
+      opacity: showBanner ? 1 : 0
+    }}
+    aria-hidden={!showBanner}
+  >
+    Livraison offerte
+  </div>
+</div>
 <img
   src={HERO}
   alt="Vélo électrique pliable"
