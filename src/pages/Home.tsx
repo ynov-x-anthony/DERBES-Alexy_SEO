@@ -1,22 +1,44 @@
-import { Link } from 'react-router-dom'
-import { products } from '../data'
+import { Link } from "react-router-dom";
+import { products } from "./products";
+import { useDocumentMeta } from "./useDocumentMeta";
 
-// Mission : le <title> de l'onglet ne change jamais ("Vite + React + TS"),
-// et les liens produits utilisent ?id=... au lieu d'une URL propre.
+function Home() {
+  useDocumentMeta({
+    title: "Vélos électriques et accessoires | CycloShop",
+    description:
+      "Découvrez CycloShop, votre boutique de vélos électriques et d'accessoires. Trouvez le vélo adapté à vos déplacements.",
+  });
 
-export default function Home() {
   return (
-    <div className="page">
-      <h1>CycloShop</h1>
-      <p>Tout l'équipement pour rouler en ville, toute l'année.</p>
+    <main>
+      <h1>Bienvenue chez CycloShop</h1>
 
-      <ul>
-        {products.map((p) => (
-          <li key={p.id}>
-            <Link to={`/product?id=${p.id}`}>{p.name}</Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
+      <p>
+        Découvrez notre sélection de vélos électriques et
+        d'accessoires pour vos déplacements.
+      </p>
+
+      <section>
+        <h2>Nos produits</h2>
+
+        <div>
+          {products.map((product) => (
+            <article key={product.slug}>
+              <h3>{product.name}</h3>
+
+              <p>{product.description}</p>
+
+              <p>{product.price} €</p>
+
+              <Link to={`/produits/${product.slug}`}>
+                Voir le produit
+              </Link>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
 }
+
+export default Home;
